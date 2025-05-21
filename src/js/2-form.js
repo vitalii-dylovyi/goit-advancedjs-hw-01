@@ -20,11 +20,10 @@ form.addEventListener('submit', event => {
   event.preventDefault();
 
   if (!formData.email.length || !formData.message.length)
-    alert('Fill please all fields');
+    return alert('Fill please all fields');
 
   console.log(formData);
-  localStorage.clear();
+  localStorage.removeItem('feedback-form-state');
   formData = getFormData();
   form.reset();
 });
-
